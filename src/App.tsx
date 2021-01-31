@@ -1,11 +1,11 @@
 import React from "react";
 import { GlobalStyle } from "./global-styles";
-import Auth from "./features/Auth";
+import Form from "./features/AddForm";
 
 function App() {
   return (
     <>
-      <Auth />
+      <Form />
       <GlobalStyle />
     </>
   );

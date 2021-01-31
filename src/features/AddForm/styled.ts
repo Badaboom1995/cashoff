@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   height: 100vh;
   padding-top: 180px;
   box-sizing: border-box;
-  background-color: #102250;
 `;
 export const Form = styled.form`
   width: 400px;

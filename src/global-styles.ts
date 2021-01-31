@@ -14,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
   body, a {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
   }
+  body{
+    background-color: #f6f6f6;
+  }
 
   #root {
     min-height: 100%;

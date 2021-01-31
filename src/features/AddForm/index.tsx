@@ -3,7 +3,7 @@ import AuthView from "./view";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-function Auth() {
+function AddForm() {
   const [loading, setLoading] = useState(false);
 
   const yupSchema = Yup.object({
@@ -46,4 +46,4 @@ function Auth() {
     </Formik>
   );
 }
-export default Auth;
+export default AddForm;
