@@ -37,6 +37,9 @@ type WrapperProps = {
 export const OptionsContainer = styled.div`
   z-index: 1;
   width: 100%;
+  max-height: 220px;
+  box-sizing: border-box;
+  overflow: scroll;
   position: absolute;
   top: 55px;
   border-radius: 8px;
@@ -56,7 +59,7 @@ export const Wrapper = styled.div<WrapperProps>`
 `;
 export const Option = styled.label`
   display: block;
-  padding: 15px;
+  padding: 9px;
   background-color: #fff;
   cursor: pointer;
   &:hover {

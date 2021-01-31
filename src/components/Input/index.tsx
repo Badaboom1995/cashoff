@@ -20,6 +20,7 @@ export default function Input({
             name={name}
             placeholder={title}
             error={error}
+            touched={touched ? 1 : 0}
           />
         </InputContainer>
       </ErrorContainier>

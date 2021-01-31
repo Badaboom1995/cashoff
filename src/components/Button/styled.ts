@@ -35,9 +35,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
   }
 `;
 type TextProps = {
-  loading?: boolean;
+  spinnerActive: boolean;
 };
 export const Text = styled.span<TextProps>`
   position: relative;
-  color: ${(props) => props.loading && "transparent"};
+  color: ${(props) => props.spinnerActive && "transparent"};
 `;

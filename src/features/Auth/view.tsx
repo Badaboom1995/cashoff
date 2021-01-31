@@ -38,7 +38,15 @@ function AuthView(props: any) {
           />
           <Select
             title="Select country"
-            options={["Libia", "Latvia"]}
+            options={[
+              "Latvia",
+              "Lebanon",
+              "Lesotho",
+              "Liberia",
+              "Libia",
+              "Macedonia",
+              "Litva",
+            ]}
             groupName="country"
             error={props.errors.country}
             touched={!!props.touched.country}
@@ -64,7 +72,6 @@ function AuthView(props: any) {
             </span>
           </Checkbox>
         </Fields>
-
         <Button disabled={!props.isValid} type="submit" loading={props.loading}>
           Sign up
         </Button>

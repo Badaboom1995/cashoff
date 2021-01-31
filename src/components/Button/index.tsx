@@ -6,7 +6,7 @@ import { ButtonProps } from "./types";
 function Button({ children, disabled, onClick, type, loading }: ButtonProps) {
   return (
     <StyledButton disabled={disabled || loading} onClick={onClick} type={type}>
-      <Text loading={loading}>
+      <Text spinnerActive={loading ? true : false}>
         {loading && <img src={spinner} alt="loader" />}
         {children}
       </Text>
