@@ -1,11 +1,11 @@
 import React from "react";
 import { GlobalStyle } from "./global-styles";
-import Form from "./features/AddForm";
+import Main from "./pages/Main";
 
 function App() {
   return (
     <>
-      <Form />
+      <Main />
       <GlobalStyle />
     </>
   );
