@@ -7,37 +7,36 @@ function AddFormView(props: any) {
   return (
     <Wrapper>
       <Form onSubmit={props.handleSubmit}>
-        <FormTitle>Create a new account</FormTitle>
+        <FormTitle>Добавить банк</FormTitle>
         <Fields>
           <Input
             name="name"
             title="Название"
-            error={props.errors.email}
-            touched={!!props.touched.email}
-          />
-          <Input
-            name="bik"
-            title="БИК"
             error={props.errors.name}
             touched={!!props.touched.name}
           />
           <Input
-            name="korr"
+            name="bik"
+            title="БИК"
+            error={props.errors.bik}
+            touched={!!props.touched.bik}
+          />
+          <Input
+            name="kor"
             title="Коррсчет"
-            password
-            error={props.errors.password}
-            touched={!!props.touched.password}
+            error={props.errors.kor}
+            touched={!!props.touched.kor}
           />
           <Input
             name="adress"
             title="Адрес"
             password
-            error={props.errors.password}
-            touched={!!props.touched.password}
+            error={props.errors.adress}
+            touched={!!props.touched.adress}
           />
         </Fields>
         <Button disabled={!props.isValid} type="submit" loading={props.loading}>
-          Sign up
+          Добавить
         </Button>
       </Form>
     </Wrapper>
