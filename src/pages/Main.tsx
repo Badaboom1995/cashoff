@@ -31,7 +31,6 @@ function Main() {
   };
   const addFilter = (key: string, value: string) => {
     setFilters({ ...filters, [key]: value });
-    console.log(filters);
   };
   const selectFilteredBanks: any = (banks: BankType[], filters: any) =>
     banks

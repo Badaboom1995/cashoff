@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AddFormView from "./view";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -14,8 +14,6 @@ interface IAddForm {
 }
 
 function AddForm({ handleSubmit, initialValues }: IAddForm) {
-  const [loading, setLoading] = useState(false);
-
   const yupSchema = Yup.object({
     name: Yup.string().required("Введите название банка"),
     bik: Yup.string()
@@ -44,7 +42,7 @@ function AddForm({ handleSubmit, initialValues }: IAddForm) {
       validationSchema={yupSchema}
       validateOnMount={true}
     >
-      {(props) => <AddFormView {...props} loading={loading} />}
+      {(props) => <AddFormView {...props} />}
     </Formik>
   );
 }
