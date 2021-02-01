@@ -5,23 +5,30 @@ import BankItem from "./views/BankItem";
 
 interface IBanksList {
   banks: BankType[];
+  deleteBank: (id: string) => void;
+  chooseBank: (id: string) => void;
 }
 
-function BanksList({ banks }: IBanksList) {
+function BanksList({ banks, chooseBank, deleteBank }: IBanksList) {
   return (
     <Wrapper>
       <Table>
         <THead>
           <Row>
             <Cell>Название</Cell>
-            <Cell>Бик</Cell>
+            <Cell>БИК</Cell>
             <Cell>Корсчет</Cell>
             <Cell>Адрес</Cell>
           </Row>
         </THead>
         <tbody>
           {banks.map((bank) => (
-            <BankItem key={bank.bik} bank={bank} />
+            <BankItem
+              key={bank.bik}
+              bank={bank}
+              chooseBank={chooseBank}
+              deleteBank={deleteBank}
+            />
           ))}
         </tbody>
       </Table>

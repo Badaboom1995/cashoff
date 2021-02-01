@@ -24,11 +24,23 @@ function Main() {
       .filter((bank) => bank.name.includes(filters.name))
       .filter((bank) => bank.bik.includes(filters.bik));
 
+  const deleteBank = (bik: string) => {
+    console.log(bik);
+    setBanks(banks.filter((bank: BankType) => bank.bik !== bik));
+  };
+  const chooseBank = (bik: string) => {
+    // setBanks([]);
+  };
+
   return (
     <Wrapper>
       <LeftArea>
         <Filters addFilter={addFilter} />
-        <BanksList banks={selectFilteredBanks(banks, filters)} />
+        <BanksList
+          deleteBank={deleteBank}
+          chooseBank={chooseBank}
+          banks={selectFilteredBanks(banks, filters)}
+        />
       </LeftArea>
       <RightArea>
         <AddForm handleSubmit={addBank} />
