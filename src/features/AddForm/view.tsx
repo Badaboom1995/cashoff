@@ -41,7 +41,7 @@ function AddFormView(props: any) {
             type="submit"
             loading={props.loading}
           >
-            Добавить
+            Готово
           </Button>
         </Form>
       </Card>

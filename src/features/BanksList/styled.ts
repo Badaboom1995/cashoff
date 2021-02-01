@@ -15,7 +15,11 @@ export const THead = styled.thead`
 export const TBody = styled.tbody`
   font-weight: normal;
 `;
-export const Row = styled.tr`
+type RowProps = {
+  clickable?: boolean;
+};
+export const Row = styled.tr<RowProps>`
+  cursor: ${(props) => props.clickable && "pointer"};
   &:nth-child(2n + 2) {
     background-color: #f6f6f6;
   }

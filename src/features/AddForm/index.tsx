@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import AuthView from "./view";
+import AddFormView from "./view";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 interface IAddForm {
   handleSubmit: (props: any) => void;
+  initialValues?: {
+    name: string;
+    bik: string;
+    kor: string;
+    adress: string;
+  };
 }
 
-function AddForm({ handleSubmit }: IAddForm) {
+function AddForm({ handleSubmit, initialValues }: IAddForm) {
   const [loading, setLoading] = useState(false);
 
   const yupSchema = Yup.object({
@@ -21,7 +27,7 @@ function AddForm({ handleSubmit }: IAddForm) {
     adress: Yup.string().required("Введите адрес"),
   });
 
-  const initialValues = {
+  const defaultValues = {
     name: "",
     bik: "",
     kor: "",
@@ -30,7 +36,7 @@ function AddForm({ handleSubmit }: IAddForm) {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={initialValues || defaultValues}
       onSubmit={(values, actions) => {
         handleSubmit(values);
         // actions.resetForm();
@@ -38,7 +44,7 @@ function AddForm({ handleSubmit }: IAddForm) {
       validationSchema={yupSchema}
       validateOnMount={true}
     >
-      {(props) => <AuthView {...props} loading={loading} />}
+      {(props) => <AddFormView {...props} loading={loading} />}
     </Formik>
   );
 }

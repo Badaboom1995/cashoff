@@ -11,8 +11,9 @@ interface IBankItem {
 function BankItem({ bank, chooseBank, deleteBank }: IBankItem) {
   return (
     <Row
+      clickable
       onClick={() => {
-        chooseBank(bank.bik);
+        chooseBank(bank.id);
       }}
     >
       <Cell>{bank.name}</Cell>
@@ -22,7 +23,7 @@ function BankItem({ bank, chooseBank, deleteBank }: IBankItem) {
       <Cell>
         <button
           onClick={() => {
-            deleteBank(bank.bik);
+            deleteBank(bank.id);
           }}
         >
           delete
