@@ -9,7 +9,7 @@ function AddFormView(props: any) {
     <Wrapper>
       <Card>
         <Form onSubmit={props.handleSubmit}>
-          <FormTitle>Добавить банк</FormTitle>
+          <FormTitle>{props.edit ? "Изменить" : "Добавить"} банк</FormTitle>
           <Fields>
             <Input
               name="name"

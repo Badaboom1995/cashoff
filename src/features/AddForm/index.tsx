@@ -37,12 +37,14 @@ function AddForm({ handleSubmit, initialValues }: IAddForm) {
       initialValues={initialValues || defaultValues}
       onSubmit={(values, actions) => {
         handleSubmit(values);
-        // actions.resetForm();
+        actions.resetForm();
       }}
       validationSchema={yupSchema}
       validateOnMount={true}
     >
-      {(props) => <AddFormView {...props} />}
+      {(props) => (
+        <AddFormView {...props} edit={initialValues ? true : false} />
+      )}
     </Formik>
   );
 }
