@@ -9,9 +9,9 @@ type InputProps = {
   touched: 0 | 1;
 };
 
-export const StyledInput = styled(Field)`
+export const StyledInput = styled(Field)<InputProps>`
   color: ${(props) => props.error && props.touched === 1 && "#A2A2A2"};
-  width: 100%;
+  /* width: 100%; */
   background-color: transparent;
   font-size: 14px;
   border: none;

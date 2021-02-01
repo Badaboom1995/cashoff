@@ -2,7 +2,7 @@ import React from "react";
 import { Wrapper, ErrorText } from "./styled";
 
 interface ErrorContainierInterface {
-  error: string;
+  error?: string;
   children: React.ReactNode;
 }
 function ErrorContainier({ error, children }: ErrorContainierInterface) {

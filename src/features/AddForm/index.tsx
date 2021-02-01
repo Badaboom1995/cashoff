@@ -3,7 +3,11 @@ import AuthView from "./view";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-function AddForm() {
+interface IAddForm {
+  handleSubmit: (props: any) => void;
+}
+
+function AddForm({ handleSubmit }: IAddForm) {
   const [loading, setLoading] = useState(false);
 
   const yupSchema = Yup.object({
@@ -12,7 +16,7 @@ function AddForm() {
       .matches(/^[0-9]{9}$/, { message: "Некорректный БИК" })
       .required("Введите БИК"),
     kor: Yup.string()
-      .matches(/^(?:[\. ]*\d){20}$/, { message: "Некорректный Корсчет" })
+      .matches(/^(?:[. ]*\d){20}$/, { message: "Некорректный Корсчет" })
       .required("Введите Корсчет"),
     adress: Yup.string().required("Введите адрес"),
   });
@@ -27,11 +31,9 @@ function AddForm() {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={() => {
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false);
-        }, 10000);
+      onSubmit={(values, actions) => {
+        handleSubmit(values);
+        // actions.resetForm();
       }}
       validationSchema={yupSchema}
       validateOnMount={true}

@@ -1,8 +1,9 @@
 export interface InputInterface {
   name: string;
   title: string;
-  error: string;
+  error?: string;
   icon?: string;
   password?: boolean;
-  touched: boolean;
+  touched?: boolean;
+  onChange?: (e: any) => void;
 }
